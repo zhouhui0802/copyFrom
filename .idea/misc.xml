@@ -6,6 +6,7 @@
       <list>
         <option value="$PROJECT_DIR$/Spring_IOC/pom.xml" />
         <option value="$PROJECT_DIR$/Spring_Outer/pom.xml" />
+        <option value="$PROJECT_DIR$/spring_ioc_xml/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
