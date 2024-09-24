@@ -23,4 +23,14 @@ public class IOCByAnnotationTest {
         UserDao userDao=ioc.getBean(UserDao.class);
         System.out.println(userDao);
     }
+
+    @Test
+    public void test1(){
+
+        ApplicationContext ioc=new ClassPathXmlApplicationContext("spring-ioc-annotation.xml");
+
+        UserController userController=ioc.getBean("userController",UserController.class);
+
+        userController.saveUser();
+    }
 }
