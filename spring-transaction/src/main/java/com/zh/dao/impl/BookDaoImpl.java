@@ -30,7 +30,7 @@ public class BookDaoImpl implements BookDao {
 
     @Override
     public void updateBalance(Integer userId, Integer price) {
-        String sql="update t_user set balance=balance-? where user_id=?";
+        String sql="update t_student set balance=balance-? where user_id=?";
         jdbcTemplate.update(sql,price,userId);
     }
 }

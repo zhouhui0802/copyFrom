@@ -18,4 +18,9 @@ public class TxAnnotationTest {
     public void testBuyBook(){
         bookController.buyBook(1,1);
     }
+
+    @Test
+    public void testCheckOut(){
+        bookController.checkout(1,new Integer[]{1,2});
+    }
 }
