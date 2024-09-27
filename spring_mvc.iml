@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module version="4">
+  <component name="AdditionalModuleElements">
+    <content url="file://$MODULE_DIR$/spring_mvc" dumb="true">
+      <sourceFolder url="file://$MODULE_DIR$/spring_mvc/src/main/com.zh.controller" isTestSource="false" />
+    </content>
+  </component>
+</module>

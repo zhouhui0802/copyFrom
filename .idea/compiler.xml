@@ -6,8 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Spring_IOC" />
         <module name="spring-transaction" />
+        <module name="spring_mvc" />
+        <module name="springmvc_demo" />
+        <module name="Spring_IOC" />
         <module name="spring-aop" />
         <module name="spring_proxy" />
         <module name="spring_ioc_xml" />
