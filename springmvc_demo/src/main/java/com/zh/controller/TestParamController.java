@@ -1,5 +1,6 @@
 package com.zh.controller;
 
+import com.zh.pojo.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestHeader;
@@ -27,6 +28,12 @@ public class TestParamController {
                                        @CookieValue("JSESSIONID") String jsessionid){
 
         System.out.println("username:="+username+":"+"password:="+password);
+        return "success";
+    }
+
+    @RequestMapping("/param/pojo")
+    public String getParamByPojo(User user){
+        System.out.println(user);
         return "success";
     }
 }
