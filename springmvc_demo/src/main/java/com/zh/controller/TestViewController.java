@@ -15,4 +15,9 @@ public class TestViewController {
     public String testInternalResourceView(){
         return "forward:/test/model";
     }
+
+    @RequestMapping("/test/view/redirect")
+    public String testRedirectView(){
+        return "redirect:/test/model";
+    }
 }
