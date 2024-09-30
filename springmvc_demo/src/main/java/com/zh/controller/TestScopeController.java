@@ -6,6 +6,8 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpSession;
 import java.util.Map;
 
 @Controller
@@ -37,6 +39,21 @@ public class TestScopeController {
     public String testmap(Map<String,Object> map){
 
         map.put("testRequestScope","hello map");
+        return "success";
+    }
+
+    @RequestMapping("/test/session")
+    public String tesSesssion(HttpSession session){
+
+        session.setAttribute("testSessionScope","hello session");
+        return "success";
+    }
+
+    @RequestMapping("/test/application")
+    public String tesApplication(HttpSession session){
+
+        ServletContext servletContext=session.getServletContext();
+        servletContext.setAttribute("testSessionScope","hello session");
         return "success";
     }
 }
