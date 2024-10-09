@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" th:href="@{/static/css/index_work.css}">
 </head>
 <body>
+<div id="app">
     <table>
         <tr>
             <th colspan="5">employee list</th>
@@ -14,7 +16,7 @@
             <th>lastName</th>
             <th>email</th>
             <th>gender</th>
-            <th>options</th>
+            <th>options (<a th:href="@{to/add}">add</a>)</th>
         </tr>
         <tr th:each="employee: ${allEmployee}">
             <td th:text="${employee.id}"></td>
@@ -22,10 +24,32 @@
             <td th:text="${employee.email}"></td>
             <td th:text="${employee.gender}"></td>
             <td>
-                <a href="">delete</a>
-                <a href="">update</a>
+                <a @click="deleteEmployee" th:href="@{'/employee/'+${employee.id}}">delete</a>
+                <a th:href="@{'/employee/'+${employee.id}}">update</a>
             </td>
         </tr>
     </table>
+</div>
+
+<form method="post">
+    <input type="hidden" name="_method" value="delete">
+</form>
+
+<script type="text/javascript" th:src="@{/static/js/vue.js}"></script>
+<script type="text/javascript">
+    var vue=new Vue(
+        {
+            el:"#app",
+            methods:{
+                deleteEmployee(){
+                    var form=document.getElementsByTagName("form")[0];
+                    form.action=event.target.href;
+                    form.submit();
+                    event.preventDefault();
+                }
+            }
+        }
+    );
+</script>
 </body>
 </html>
