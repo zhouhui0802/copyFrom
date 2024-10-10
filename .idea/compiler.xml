@@ -10,6 +10,7 @@
         <module name="springmvc_rest" />
         <module name="spring_mvc" />
         <module name="springmvc_demo" />
+        <module name="Spring_mvc_ajax" />
         <module name="Spring_IOC" />
         <module name="spring-aop" />
         <module name="spring_proxy" />
