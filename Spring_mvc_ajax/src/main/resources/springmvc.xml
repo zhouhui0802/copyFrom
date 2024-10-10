@@ -37,7 +37,16 @@
 
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"></bean>
 
-
+    <bean id="firstInterceptor" class="com.zh.interceptor.FirstInterceptor"></bean>
+    <mvc:interceptors>
+        <!--<bean class="com.zh.interceptor.FirstInterceptor"></bean>-->
+        <!--<ref bean="firstInterceptor"></ref>-->
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <mvc:exclude-mapping path="/abc"/>
+            <ref bean="firstInterceptor"></ref>
+        </mvc:interceptor>
+    </mvc:interceptors>
 
 
 </beans>

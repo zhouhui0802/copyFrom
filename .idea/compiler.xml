@@ -18,6 +18,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="spring_mvc_extension" target="1.8" />
       <module name="Spring_Outer" target="1.8" />
     </bytecodeTargetLevel>
   </component>

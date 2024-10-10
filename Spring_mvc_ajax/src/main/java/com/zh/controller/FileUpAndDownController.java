@@ -14,6 +14,7 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.UUID;
 
 @Controller
 public class FileUpAndDownController {
@@ -23,6 +24,13 @@ public class FileUpAndDownController {
     public String testUp(MultipartFile photo,HttpSession session) throws IOException{
 
         String fileName=photo.getOriginalFilename();
+
+        String hzName=fileName.substring(fileName.lastIndexOf("."));
+
+        String uuid= UUID.randomUUID().toString();
+
+        fileName=uuid+hzName;
+
         ServletContext servletContext=session.getServletContext();
         String photoPath=servletContext.getRealPath("photo");
         File file=new File(photoPath);
