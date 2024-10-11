@@ -14,6 +14,7 @@
         <module name="Spring_IOC" />
         <module name="spring-aop" />
         <module name="spring_proxy" />
+        <module name="SSM" />
         <module name="spring_mvc_annotation" />
         <module name="spring_ioc_xml" />
       </profile>

@@ -1,0 +1,8 @@
+create table t_emp(
+	emp_id int(11) not null AUTO_INCREMENT,
+	emp_name VARCHAR(20) DEFAULT NULL,
+  age int(11) DEFAULT null,
+  sex char(1) DEFAULT null,
+  email VARCHAR(50) DEFAULT null,
+  PRIMARY KEY (emp_id)
+)ENGINE=INNODB DEFAULT CHARSET=utf8
