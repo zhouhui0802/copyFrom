@@ -24,7 +24,7 @@ public class EmployeeController {
 
         List<Employee> list=employeeService.getAllEmployee();
 
-        model.addAttribute("model",model);
+        model.addAttribute("list",list);
 
         return "employee_list";
     }
