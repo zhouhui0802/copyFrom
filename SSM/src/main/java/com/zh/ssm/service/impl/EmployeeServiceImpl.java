@@ -28,7 +28,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     public PageInfo<Employee> getEmployeePage(Integer pageNum) {
 
         //开启分页功能
-        PageHelper.startPage(pageNum,4);
+        PageHelper.startPage(pageNum,2);
 
         List<Employee> list=employeeMapper.getAllEmployee();
 

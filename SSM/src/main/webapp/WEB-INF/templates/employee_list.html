@@ -32,7 +32,7 @@
 <div style="text-align: center;">
     <a th:if="${page.hasPreviousPage}" th:href="@{/employee/page/1}">首页</a>
     <a th:if="${page.hasPreviousPage}" th:href="@{'/employee/page/'+${page.prePage}}">上一页</a>
-    <span th:each="num: ${page.navigatepageNum}">
+    <span th:each="num: ${page.navigatepageNums}">
         <a th:if="${page.pageNum==num}" style="color: red" th:href="@{'/employee/page/'+${page.nextPage}}" th:text="'['+${num}+']'"></a>
         <a th:if="${page.pageNum!=num}" th:href="@{'/employee/page/'+${page.nextPage}}" th:text="${num}"></a>
     </span>
