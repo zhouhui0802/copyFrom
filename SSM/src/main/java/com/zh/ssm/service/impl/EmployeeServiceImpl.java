@@ -1,5 +1,7 @@
 package com.zh.ssm.service.impl;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.zh.ssm.mapper.EmployeeMapper;
 import com.zh.ssm.pojo.Employee;
 import com.zh.ssm.service.EmployeeService;
@@ -20,5 +22,17 @@ public class EmployeeServiceImpl implements EmployeeService {
     @Override
     public List<Employee> getAllEmployee() {
         return employeeMapper.getAllEmployee();
+    }
+
+    @Override
+    public PageInfo<Employee> getEmployeePage(Integer pageNum) {
+        //开启分页功能
+        PageHelper.startPage(pageNum,2);
+
+        List<Employee> list=employeeMapper.getAllEmployee();
+
+        PageInfo<Employee> page=new PageInfo<>(list,3);
+
+        return page;
     }
 }
