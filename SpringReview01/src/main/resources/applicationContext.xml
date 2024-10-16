@@ -4,11 +4,13 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <bean id="bookDao" class="com.zh.dao.impl.BookDaoImpl" init-method="init" destroy-method="destory">
-
+        <property name="connectionNum" value="10"></property>
+        <property name="databaseName" value="mysql"></property>
     </bean>
 
     <bean id="bookService" class="com.zh.service.impl.BookServiceImpl">
         <property name="bookDao" ref="bookDao"></property>
+        <property name="userDao" ref="userDao"></property>
     </bean>
 
     <bean id="orderDao" class="com.zh.factory.OrderDaoFactory" factory-method="getOrderDao">
@@ -16,7 +18,7 @@
     </bean>
 
     <bean id="userDaoFactory" class="com.zh.factory.UserDaoFactory"></bean>
-    <bean id="userDao" factory-method="getUserDao" factory-bean="userDaoFactory"></bean>
+    <bean id="userDao" factory-method="getUserDao" factory-bean="userDaoFactory" class="com.zh.dao.impl.UserDaoImpl"></bean>
 
     <bean id="userDaoFactoryBean" class="com.zh.factory.UserDaoFactoryBean"></bean>
 
