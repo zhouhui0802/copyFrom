@@ -9,13 +9,15 @@ import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import javax.sql.DataSource;
+
 public class SpringTest {
 
     @Test
     public void testSpring(){
         ClassPathXmlApplicationContext ctx=new ClassPathXmlApplicationContext("applicationContext.xml");
 
-        BookDao bookDao=(BookDao) ctx.getBean("bookDao");
+/*        BookDao bookDao=(BookDao) ctx.getBean("bookDao");
 
         bookDao.save();
         System.out.println("-----------");
@@ -33,6 +35,12 @@ public class SpringTest {
         UserDao userDao1=(UserDao) ctx.getBean("userDaoFactoryBean");
         userDao1.save();
 
-        ctx.close();
+        ctx.close();*/
+
+        DataSource dataSource01=(DataSource) ctx.getBean("dataSource01");
+        System.out.println(dataSource01);
+
+        DataSource dataSource02=(DataSource) ctx.getBean("dataSource02");
+        System.out.println(dataSource02);
     }
 }

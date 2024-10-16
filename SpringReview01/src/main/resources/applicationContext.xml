@@ -3,23 +3,18 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="bookDao" class="com.zh.dao.impl.BookDaoImpl" init-method="init" destroy-method="destory">
-        <property name="connectionNum" value="10"></property>
-        <property name="databaseName" value="mysql"></property>
+    <bean id="dataSource01" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
+        <property name="url" value="jdbc:mysql://localhost:3306/ssm"></property>
+        <property name="username" value="root"></property>
+        <property name="password" value="123456"></property>
     </bean>
 
-    <bean id="bookService" class="com.zh.service.impl.BookServiceImpl">
-        <property name="bookDao" ref="bookDao"></property>
-        <property name="userDao" ref="userDao"></property>
+    <bean id="dataSource02" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+        <property name="driverClass" value="com.mysql.jdbc.Driver"></property>
+        <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/ssm"></property>
+        <property name="user" value="root"></property>
+        <property name="password" value="123456"></property>
     </bean>
-
-    <bean id="orderDao" class="com.zh.factory.OrderDaoFactory" factory-method="getOrderDao">
-
-    </bean>
-
-    <bean id="userDaoFactory" class="com.zh.factory.UserDaoFactory"></bean>
-    <bean id="userDao" factory-method="getUserDao" factory-bean="userDaoFactory" class="com.zh.dao.impl.UserDaoImpl"></bean>
-
-    <bean id="userDaoFactoryBean" class="com.zh.factory.UserDaoFactoryBean"></bean>
 
 </beans>

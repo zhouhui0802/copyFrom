@@ -8,22 +8,22 @@
         <outputRelativeToContentRoot value="true" />
         <module name="SSM_Copy" />
         <module name="SpringReview01" />
-        <module name="Spring_IOC" />
-        <module name="SSM" />
-        <module name="spring_mvc_annotation" />
-        <module name="spring-transaction" />
         <module name="springmvc_rest" />
         <module name="spring_mvc" />
         <module name="springmvc_demo" />
         <module name="Spring_mvc_ajax" />
-        <module name="spring-aop" />
-        <module name="spring_proxy" />
-        <module name="spring_ioc_xml" />
+        <module name="Spring_IOC" />
+        <module name="SSM" />
+        <module name="spring_mvc_annotation" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="spring-aop" target="1.8" />
+      <module name="spring-transaction" target="1.8" />
+      <module name="spring_ioc_xml" target="1.8" />
       <module name="spring_mvc_extension" target="1.8" />
       <module name="Spring_Outer" target="1.8" />
+      <module name="spring_proxy" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

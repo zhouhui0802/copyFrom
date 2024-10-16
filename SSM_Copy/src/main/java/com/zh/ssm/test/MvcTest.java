@@ -19,24 +19,7 @@ import org.springframework.web.context.WebApplicationContext;
 @ExtendWith(SpringExtension.class)
 public class MvcTest {
 
-    @Autowired
-    WebApplicationContext context;
 
-    MockMvc mockMvc;
 
-    @Before
-    public void initMocMvc(){
 
-        mockMvc=MockMvcBuilders.webAppContextSetup(context).build();
-    }
-
-    public void testPage() throws Exception {
-
-       MvcResult result= mockMvc.perform(MockMvcRequestBuilders.get("/emps").param("pn","1")).andReturn();
-
-        MockHttpServletRequest request=result.getRequest();
-        request.getAttribute("pageInfo");
-        PageInfo attribute=(PageInfo) request.getAttribute("pageInfo");
-
-    }
 }
