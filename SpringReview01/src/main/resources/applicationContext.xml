@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="bookDao" class="com.zh.dao.impl.BookDaoImpl" init-method="init" destroy-method="destory">
+
+    </bean>
+
+    <bean id="bookService" class="com.zh.service.impl.BookServiceImpl">
+        <property name="bookDao" ref="bookDao"></property>
+    </bean>
+
+    <bean id="orderDao" class="com.zh.factory.OrderDaoFactory" factory-method="getOrderDao">
+
+    </bean>
+
+    <bean id="userDaoFactory" class="com.zh.factory.UserDaoFactory"></bean>
+    <bean id="userDao" factory-method="getUserDao" factory-bean="userDaoFactory"></bean>
+
+    <bean id="userDaoFactoryBean" class="com.zh.factory.UserDaoFactoryBean"></bean>
+
+</beans>
