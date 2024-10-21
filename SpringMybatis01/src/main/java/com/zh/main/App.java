@@ -1,32 +1,21 @@
 package com.zh.main;
 
-import com.zh.domain.Account;
-import jdk.internal.util.xml.impl.Input;
-import org.apache.ibatis.io.Resources;
-import org.apache.ibatis.session.SqlSession;
-import org.apache.ibatis.session.SqlSessionFactory;
-import org.apache.ibatis.session.SqlSessionFactoryBuilder;
+import com.zh.config.SpringConfig;
+import com.zh.dao.BookDao;
 
-import java.io.InputStream;
-import com.zh.dao.AccountDao;
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 public class App {
 
     public static void main(String args[]) throws Exception{
 
-        SqlSessionFactoryBuilder sqlSessionFactoryBuilder=new SqlSessionFactoryBuilder();
 
-        InputStream inputStream= Resources.getResourceAsStream("SqlMapConfig.xml");
 
-        SqlSessionFactory sqlSessionFactory=sqlSessionFactoryBuilder.build(inputStream);
 
-        SqlSession sqlSession=sqlSessionFactory.openSession();
+        ApplicationContext ctx=new AnnotationConfigApplicationContext(SpringConfig.class);
+        BookDao bookDao=ctx.getBean(BookDao.class);
+        bookDao.save();
 
-        AccountDao accountDao=sqlSession.getMapper(AccountDao.class);
-
-        Account account=accountDao.findById(1);
-
-        System.out.println(account);
-
-        sqlSession.close();
     }
 }

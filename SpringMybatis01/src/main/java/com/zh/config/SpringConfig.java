@@ -1,13 +1,11 @@
 package com.zh.config;
 
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Import;
-import org.springframework.context.annotation.PropertySource;
+import org.springframework.context.annotation.*;
 
 @Configuration
 @ComponentScan("com.zh")
-@PropertySource("classpath:jdbc.properties")
-@Import({JdbcConfig.class, MybatisConfig.class})
+/*@PropertySource("classpath:jdbc.properties")*/
+/*@Import({JdbcConfig.class, MybatisConfig.class})*/
+@EnableAspectJAutoProxy
 public class SpringConfig {
 }
