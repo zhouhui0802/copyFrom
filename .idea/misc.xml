@@ -21,6 +21,7 @@
         <option value="$PROJECT_DIR$/SpringReview01/pom.xml" />
         <option value="$PROJECT_DIR$/MybatisPlusDemo/pom.xml" />
         <option value="$PROJECT_DIR$/Spring02/pom.xml" />
+        <option value="$PROJECT_DIR$/SpringMybatis01/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
@@ -34,7 +35,7 @@
       </set>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_18" default="true" project-jdk-name="JDKSpring" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/out" />
   </component>
 </project>

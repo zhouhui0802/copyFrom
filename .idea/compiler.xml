@@ -9,6 +9,7 @@
         <module name="SSM_Copy" />
         <module name="SpringReview01" />
         <module name="MybatisPlusDemo" />
+        <module name="SpringMybatis01" />
         <module name="springmvc_rest" />
         <module name="spring_mvc" />
         <module name="springmvc_demo" />
